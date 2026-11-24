@@ -1,41 +1,57 @@
 TALLER 6 - RESPUESTAS PARTE 4
-Integrante A: ___________________________
-Integrante B: ___________________________
+Integrante A: Pitti Jorge
+Integrante B: Diaz Angel
 
 ──────────────────────────────────────────
 1. ¿Cuál es la diferencia entre add("valor") y add(1, "valor")?
 
 RESPUESTA:
-
+add("valor") agrega el elemento al final de la lista. add(1, "valor") inserta
+el elemento en el índice 1, desplazando a los elementos que estaban desde esa
+posición hacia la derecha.
 
 ──────────────────────────────────────────
 2. ¿Qué ocurre si intentas hacer ciudades.get(10) en una lista de 5 elementos?
 
 RESPUESTA:
-
+Lanza IndexOutOfBoundsException porque el índice 10 está fuera de rango: con
+5 elementos los índices válidos son 0 a 4. Antes de get conviene validar con
+size() o usar índices relativos como size()-1.
 
 ──────────────────────────────────────────
 3. ¿Por qué usamos ArrayList<Integer> y no ArrayList<int>?
 
 RESPUESTA:
-
+Las colecciones de Java solo almacenan objetos (tipos de referencia), no tipos
+primitivos. Integer es la clase envolvente (wrapper) de int, y Java hace
+autoboxing automático al agregar ints y unboxing al leerlos.
 
 ──────────────────────────────────────────
 4. ¿Cuál es el orden de atención en una cola FIFO?
    ¿Cuál sería el orden en una pila LIFO con addFirst/removeFirst?
 
 RESPUESTA:
-
+FIFO (First In, First Out): se atiende primero quien llegó primero, con
+addLast para entrar y removeFirst para salir (Cliente 1, 2, 3, 4, ...).
+En una pila LIFO (Last In, First Out) con addFirst/removeFirst, el último en
+llegar es el primero en salir (por ejemplo: A, B, URGENTE → URGENTE, B, A).
 
 ──────────────────────────────────────────
 5. ¿Cuándo preferirías usar LinkedList sobre ArrayList y viceversa?
 
 RESPUESTA:
-
+ArrayList es mejor para leer por índice (get(i) es rápido) y recorrer,
+porque guarda los elementos en un arreglo contiguo. LinkedList conviene
+cuando se insertan o eliminan muchos elementos al inicio o al medio, ya que
+solo cambia referencias, y además permite addFirst/removeFirst para colas.
 
 ──────────────────────────────────────────
 MODIFICACIONES REALIZADAS:
 Sección B (filtro >= 40 + suma):
+El filtro cambió de >= 50 a >= 40, por lo que ahora se incluye 45. La lista
+filtrada es [78, 56, 89, 45, 67] y la suma de sus elementos es 335.
 
 Sección C (clientes 5 y 6 en cola):
-
+Después de la cola inicial [Cliente 1..4] se agregan Cliente 5 y Cliente 6 con
+addLast, se muestra la cola completa antes de atender y luego se atienden los
+6 clientes en orden FIFO con removeFirst.
