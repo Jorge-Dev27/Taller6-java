@@ -7,8 +7,15 @@ import java.util.Collections;
  * Taller 6 - Parte 4: Colecciones ArrayList y LinkedList
  * Integrante A: Pitti Jorge
  * Integrante B: Diaz Angel
+ * Fecha: 23/11/2026
  *
- * Muestra 3 ventanas de JOptionPane en secuencia.
+ * INSTRUCCIONES:
+ * Copia aquí el código completo de la Parte 4 que aparece en el documento.
+ * Se mostrarán 3 ventanas de JOptionPane en secuencia.
+ * Toma captura de cada una:
+ *   imagenes/p4a_ciudades.png
+ *   imagenes/p4b_numeros.png
+ *   imagenes/p4c_cola.png
  */
 public class Parte4 {
     public static void main(String[] args) {
@@ -84,7 +91,7 @@ public class Parte4 {
         sb.append(String.format("Prom  : %.2f\n", (double) suma / numeros.size()));
         sb.append("Mayor : ").append(mayor).append("\n");
 
-        // MODIFICACIÓN: filtro de >= 40 (antes >= 50) y suma de los filtrados
+        // Modificación: filtrar los mayores o iguales a 40 y sumar los filtrados
         ArrayList<Integer> mayoresDe40 = new ArrayList<>();
         int sumaFiltrados = 0;
         for (int n : numeros) {
@@ -94,7 +101,7 @@ public class Parte4 {
             }
         }
         sb.append("Mayores o iguales a 40: ").append(mayoresDe40).append("\n");
-        sb.append("Suma de filtrados     : ").append(sumaFiltrados).append("\n");
+        sb.append("Suma de filtrados      : ").append(sumaFiltrados).append("\n");
 
         JOptionPane.showMessageDialog(null, sb.toString());
         sb.setLength(0);
@@ -114,14 +121,20 @@ public class Parte4 {
         sb.append("=== LinkedList como Cola (turno bancario) ===\n");
         sb.append("Cola inicial: ").append(cola).append("\n\n");
 
-        // MODIFICACIÓN: llegan 2 clientes nuevos mientras hay clientes en cola
-        cola.addLast("Cliente 5");
-        cola.addLast("Cliente 6");
-        sb.append("Llegan 2 clientes nuevos (5 y 6).\n");
-        sb.append("Cola completa antes de atender: ").append(cola).append("\n\n");
-
         // removeFirst = atender al primero (dequeue)
         sb.append("Atendiendo clientes:\n");
+        for (int i = 0; i < 2; i++) {
+            String cliente = cola.removeFirst();
+            sb.append("  Atendido: ").append(cliente);
+            sb.append(" | Restantes en cola: ").append(cola.size()).append("\n");
+        }
+
+        // Modificación: mientras hay clientes en cola llegan otros 2
+        cola.addLast("Cliente 5");
+        cola.addLast("Cliente 6");
+        sb.append("\nLlegan 2 clientes nuevos mientras hay gente en cola.\n");
+        sb.append("Cola completa antes de seguir atendiendo: ").append(cola).append("\n\n");
+
         while (!cola.isEmpty()) {
             String cliente = cola.removeFirst();
             sb.append("  Atendido: ").append(cliente);
