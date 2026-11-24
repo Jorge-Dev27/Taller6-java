@@ -1,41 +1,32 @@
 TALLER 6 - RESPUESTAS PARTE 2
 Integrante A: Pitti Jorge
 Integrante B: Diaz Angel
+Fecha: 23/11/2026
 
 ──────────────────────────────────────────
 1. ¿Cómo accedes al valor 88 (Luis en Español) usando índices?
 
-RESPUESTA:
-calificaciones[1][1]. Luis es la fila 1 y Español es la columna 1
-(la fila 0 es Ana y la columna 0 es Matematica).
+RESPUESTA: Con calificaciones[1][1]. La primera dimensión es la fila (Luis está en la fila 1, porque Ana es la fila 0) y la segunda es la columna (Español está en la columna 1, porque Matemática es la columna 0).
+
 
 ──────────────────────────────────────────
 2. ¿Cuántos bucles for necesitas para recorrer todos los elementos de un arreglo 2D? ¿Por qué?
 
-RESPUESTA:
-Dos bucles for anidados: el bucle externo recorre las filas (estudiantes) y
-el interno recorre las columnas (materias) de cada fila. Así se visitan las
-filas * columnas celdas, por ejemplo 4 x 3 = 12 calificaciones.
+RESPUESTA: Se necesitan dos bucles for anidados. El externo recorre las filas y el interno recorre las columnas de cada fila. Cada elemento se identifica con dos índices (fila y columna), por eso hace falta un nivel de repetición para cada dimensión.
+
 
 ──────────────────────────────────────────
 3. Si agregas un cuarto estudiante, ¿qué línea de código tendrías que cambiar?
 
-RESPUESTA:
-Hay que cambiar la declaración de las dimensiones: int filas = 3 → int filas = 4
-(la columna sigue siendo 3). También hay que agregar el nombre en el arreglo
-estudiantes y asignar sus tres notas en la nueva fila [3][0], [3][1], [3][2].
+RESPUESTA: Cambiar int filas = 3; por int filas = 4;, agregar "Pedro" al arreglo estudiantes y asignar sus tres notas en la fila 3: calificaciones[3][0], [3][1] y [3][2]. El arreglo calificaciones se redimensiona automáticamente porque se declara con las variables filas y columnas.
+
 
 ──────────────────────────────────────────
 4. ¿Qué significa String.format("%-12d", valor)? ¿Qué cambia si quitas el -?
 
-RESPUESTA:
-Imprime un entero (%d) en un campo de 12 caracteres; el guion (-) alinea el
-texto a la izquierda, completando con espacios a la derecha. Si quitas el -,
-la alineación es a la derecha y los espacios quedan a la izquierda del número.
+RESPUESTA: Formatea un número entero en un campo de 12 caracteres alineado a la izquierda. Si se quita el signo -, el número se alinea a la derecha, dejando los espacios a la izquierda. El ancho del campo sigue siendo 12.
+
 
 ──────────────────────────────────────────
 MODIFICACIÓN REALIZADA (describe qué cambiaste y el nuevo promedio de columna):
-Se agregó a Pedro con notas 78, 65 y 92: filas = 4, nombre "Pedro" en el
-arreglo estudiantes y su fila de calificaciones. Sus promedios por materia
-son 79.50 (Matematica), 73.75 (Español) y 84.25 (Ciencias), calculados
-automáticamente con el bucle de promedio por columna.
+Agregué al estudiante Pedro con las notas 78, 65 y 92, y cambié filas a 4. Los promedios por estudiante quedaron: Ana 82.33, Luis 74.33, Carla 81.67 y Pedro 78.33. Los promedios por materia se recalcularon automáticamente: Matemática 79.50, Español 73.75 y Ciencias 84.25. La captura está en imagenes/p2_resultado.png.

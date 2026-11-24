@@ -4,12 +4,17 @@ import javax.swing.JOptionPane;
  * Taller 6 - Parte 2: Arreglos de dos dimensiones
  * Integrante A: Pitti Jorge
  * Integrante B: Diaz Angel
+ * Fecha: 23/11/2026
+ *
+ * INSTRUCCIONES:
+ * Copia aquí el código completo que aparece en el documento del taller.
+ * Luego ejecuta, verifica la salida y responde las preguntas en respuestas/parte2.txt
  */
 public class Parte2 {
     public static void main(String[] args) {
 
         // Dimensiones de la tabla
-        int filas    = 4;  // estudiantes (se agregó Pedro)
+        int filas    = 4;  // estudiantes (se agregó a Pedro)
         int columnas = 3;  // materias
 
         // Declaración del arreglo 2D
@@ -25,7 +30,7 @@ public class Parte2 {
         calificaciones[0][0] = 85;  calificaciones[0][1] = 72;  calificaciones[0][2] = 90;
         calificaciones[1][0] = 60;  calificaciones[1][1] = 88;  calificaciones[1][2] = 75;
         calificaciones[2][0] = 95;  calificaciones[2][1] = 70;  calificaciones[2][2] = 80;
-        calificaciones[3][0] = 78;  calificaciones[3][1] = 65;  calificaciones[3][2] = 92;  // Pedro
+        calificaciones[3][0] = 78;  calificaciones[3][1] = 65;  calificaciones[3][2] = 92;
 
         // IMPRIMIR la tabla
         StringBuilder reporte = new StringBuilder();
